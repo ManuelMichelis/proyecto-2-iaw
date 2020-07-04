@@ -1,79 +1,24 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Proyecto 2:  PHP + Laravel
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+**Fecha de revisión:** 12 de Junio de 2020.
+**Fecha de entrega:** 26 de Junio de 2020.
 
-## About Laravel
+## **Proyecto 2: concesionario de alquiler de automóviles**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+El proyecto consiste en la implementación de una aplicación web para la gestión de información correspondiente al inventariado y rentado de vehículos de un concesionario.
+Esta aplicación permitirá mantener registro de cada vehículo con el que cuenta el concesionario, donde cada uno tendrá un estado particular: disponible o alquilado por un cliente. También, se mantendrá información sobre cada cliente del establecimiento, junto con los alquileres que se han efectuado (vigentes y expirados) para todo vehículo. Además, se tendrá registrado a cada ***vendedor*** que trabaja para el concesionario y cada uno de ellos se encargará de la gestión de alquileres. Cada vendedor podrá registrar un nuevo alquiler con un cliente interesado por un determinado vehículo y, de concretarse la renta y pasar a estar registrada en el sistema, también realizar un seguimiento de su estado y de cualquier otro alquiler que se haya efectuado. También este podrá finalizar o dar de baja un alquiler siempre y cuando se presente el cliente involucrado con el vehículo correspondiente, listo para ser devuelto inmediatamente. Para un alquiler expirado, en caso de que el vehículo involucrado aún no se haya devuelto al concesionario, se creará un registro de embargo en el sistema. Este embargo será vinculado a dicho alquiler y será asociado a un ***repositor*** particular. Los repositores también son parte de la planta de trabajo del concesionario, por lo que se mantendrá un registro de cada uno de ellos en el sistema. Un repositor puede consultar los embargos vigentes e históricos de todo el concesionario, ya sean aquellos asignados a él mismo o no. En caso de ser requerido un embargo y este ser luego concretado, el repositor comunicará al ***administrador*** sobre la recuperación y este último modificará el estado del vehículo para dar por finalizado el embargo y el anterior pase a estar en revisión. El administrador puede acceder y modificar toda la información del sistema y, en particular, será quién pueda incorporar vehículos a la planta, sean nuevos o recuperados de un embargo.
+Cada empleado de la planta, sea ***vendedor***, ***repositor*** o ***administrador***, tendrá una cuenta propia en el sistema. Cada uno se asignará un rol al momento de registrarse en el sistema.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### **Aplicación Heroku:** https://sunshine-autos.herokuapp.com
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### **Link al video de presentación:** https://www.youtube.com/watch?v=bTYuzoBXZ6s 
+Producto de un inconveniente que tuve al desarrollar una cierta funcionalidad sobre el registro de embargos que requería un addon Heroku que es pago (lo supe una vez finalizada toda la implementación pertinente), me vi obligado a realizar una implenentación alternativa. Al final del video, explico la idea original para el proyecto. Por ello, lamentablemente me excedí en el largo máximo permitido para el video para poder comentar lo ocurrido y mostrar el código implementado.
 
-## Learning Laravel
+### **Implementación de API REST: pruebas**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Utilizando la aplicación Postman, es necesario llevar adelante los pasos siguientes para el comienzo de la prueba:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. Se abre una nueva pestaña para la realización de solicitudes HTTP. Trabajaremos puntualmente con solicitudes de tipo GET y POST.
+2. Para realizar solicitudes por cualquiera de las colecciones de entidades, será necesario obtener el *token de acceso* (access_token). Para ello, realizamos una solicitud POST para el login del estilo POST https://sunshine-autos.herokuapp.com/api/login. Así, se obtendrá el token en cuestión. Para el header de la solicitud, añadimos un campo adicional con clave "Authorization" y valor "Bearer [API Token]". Para el cuerpo, cosideramos el formato *form-data*, y agregamos las claves adicionales "email" y "password" con valores correspondientes a un email y contraseña que correspondan a un usuario registrado en el sistema.
+3. Obtenido el resultado de la solicitud POST anterior, deberíamos obtener el código de estado 200 junto con el atributo *access_token* y *token_type*. Tomamos el contenido del token (sin considerar las comillas dobles) y lo agregamos como valor de la clave "Authorization" en el encabezado, respetando la forma "Bearer <access_token>".
+4. Ahora, se pueden realizar solicitudes GET por cualquiera de las entidades del sistema: *usuario, empleado, cliente, automóvil, alquiler* y *embargo*. En cada caso, deberá respetarse la solicitud sobre una URL de forma https://sunshine-autos.herokuapp.com/api/<nombre_entidad_en_plural>. Así, se obtendrá como respuesta un archivo JSON que contendrá el código de estado 200, junto con el atributo response, quien contendrá la colección de todas las existencias en el sistema de la entidad particular sobre la cual se haya consultado. Ejemplo de solicitudes: GET https://sunshine-autos.herokuapp.com/api/automoviles.

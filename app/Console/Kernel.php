@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\EvaluarExpiraciones::class,
     ];
 
     /**
@@ -24,7 +24,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('sunshine:eval_exp')
+            ->everyMinute()
+            ->when(function() {
+                // Retornará 'true' cada 15 minutos, determinando el momento donde el testeo toma lugar
+                return Cron::testearPorEmbargos('sunshine:eval_exp',15);
+            });
     }
 
     /**
